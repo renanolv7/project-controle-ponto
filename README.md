@@ -27,7 +27,7 @@ O projeto é dividido em duas partes principais, cada uma com sua própria stack
 O repositório está organizado em duas pastas principais:
 
 - [**`back-end-code`**](back_end_code/api-controle-ponto): Contém todo o código-fonte da API REST em Java.
-- [**`front-end-code`**](front-end-code/): Contém o código-fonte do aplicativo em Flutter.
+- [**`front-end-code`**](front_end_code): Contém o código-fonte do aplicativo em Flutter.
   
 
 ## 🤝 Contribuições
