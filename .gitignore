@@ -1,6 +1,3 @@
-# Arquivos e pastas do Projeto Java (Spring Boot)
-
-# Pasta de build e arquivos de execução
 /back-end-code/api-controle-ponto/target/
 /back-end-code/api-controle-ponto/.gradle/
 /back-end-code/api-controle-ponto/build/
@@ -8,38 +5,22 @@
 *.war
 *.class
 
-# Arquivos de configuração sensíveis (contêm senhas, chaves, etc.)
 /back-end-code/api-controle-ponto/src/main/resources/application.yml
 
-# Arquivos de IDE (IntelliJ IDEA)
 /back-end-code/api-controle-ponto/.idea/
 *.iml
 .DS_Store
 
-# Arquivos de IDE (VS Code)
 .vscode/
 
-# Arquivos de configuração local (se tiver)
-# Se você tiver um arquivo de propriedades com senhas, pode ignorar
-# e criar um template sem a senha no repositório.
-# application-local.properties
-
-# -----------------------------------------------
-
-# Arquivos e pastas do Projeto Flutter
-
-# Pasta de build
 /front-end-code/states_flutter/build/
 
-# Pasta de dependências do Dart
 /front-end-code/states_flutter/.dart_tool/
 
-# Arquivos da IDE (Android Studio, VS Code)
 /front-end-code/states_flutter/.idea/
 /front-end-code/states_flutter/.vscode/
 /front-end-code/states_flutter/.flutter-plugins
 /front-end-code/states_flutter/.flutter-plugins-dependencies
 
-# Dependências do Dart
 /front-end-code/states_flutter/.packages
 /front-end-code/states_flutter/pubspec.lock
