@@ -15,7 +15,7 @@ public class ControlePontoService {
         this.controlePontoRepository = controlePontoRepository;
     }
 
-    public String registrarPonto(String matricula, LocalTime hora, LocalDate data) {
+    public ControlePontoEntity registrarPonto(String matricula, LocalTime hora, LocalDate data) {
 
         Optional<ControlePontoEntity> registroExistente = controlePontoRepository.findByMatriculaAndDataAtual(matricula, data);
 
@@ -23,33 +23,28 @@ public class ControlePontoService {
             return registrarPrimeiraBatida(matricula, hora, data);
         } else {
             ControlePontoEntity registro = registroExistente.get();
-            return RegistrarProximaBatida(matricula, registro, hora);
+            return registrarProximaBatida(registro, hora);
         }
     }
-    private String registrarPrimeiraBatida(String matricula, LocalTime hora, LocalDate data) {
+    private ControlePontoEntity registrarPrimeiraBatida(String matricula, LocalTime hora, LocalDate data) {
         ControlePontoEntity registro = new ControlePontoEntity();
         registro.setMatricula(matricula);
         registro.setHoraEntrada(hora);
         registro.setDataAtual(data);
-        controlePontoRepository.save(registro);
-        return "Registro de entrada realizado em: " + hora;
-    }
-    private String RegistrarProximaBatida(String matricula, ControlePontoEntity registro, LocalTime hora) {
 
+        return controlePontoRepository.save(registro);
+    }
+    private ControlePontoEntity registrarProximaBatida(ControlePontoEntity registro, LocalTime hora) {
         if(registro.getHoraAlmoco() == null){
             registro.setHoraAlmoco(hora);
-            controlePontoRepository.save(registro);
-            return "Ponto de almoço batido em: " + hora;
         } else if (registro.getHoraVoltaAlmoco() == null){
             registro.setHoraVoltaAlmoco(hora);
-            controlePontoRepository.save(registro);
-            return "Ponto de volta do almoço batido em: " + hora;
         } else if (registro.getHoraSaida() == null) {
             registro.setHoraSaida(hora);
-            controlePontoRepository.save(registro);
-            return "Ponto de saida batido em: " + hora;
         } else {
             throw new RegistroJaRealizadoException("Todos os pontos já foram batidos");
         }
+        return controlePontoRepository.save(registro);
     }
+
 }
