@@ -28,12 +28,13 @@ O repositório está organizado em duas pastas principais:
 
 - [**`back-end-code`**](back_end_code/api-controle-ponto): Contém todo o código-fonte da API REST em Java.
 - [**`front-end-code`**](front_end_code): Contém o código-fonte do aplicativo em Flutter.
-  
-
-## 🤝 Contribuições
-
-Sinta-se à vontade para contribuir com o projeto. Se encontrar algum bug ou tiver alguma sugestão de melhoria, abra uma issue ou envie um pull request.
 
 ---
+
+## 📽️ Video de funcionamento
+
+https://github.com/user-attachments/assets/7dad090a-582a-45b3-9868-65564d808f81
+
+--- 
 
 Feito por **Renan Oliveira**
